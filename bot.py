@@ -26,7 +26,9 @@ async def handle_link(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_video(video=open(filename, 'rb'))
         os.remove(filename)
     except Exception as e:
-        await update.message.reply_text(f"صار مشكل: {e}")
+        await update.message.reply_text(
+            "ما قدرتش نحمل الفيديو 😕\nابعثلي الرابط فحسابي الرئيسي وحلها معاك: @memarwan7"
+        )
 
 def main():
     app = Application.builder().token(TOKEN).build()
